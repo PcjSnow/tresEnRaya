@@ -1,0 +1,35 @@
+{
+    "tasks" : [
+        {
+            "label": "Compilar proyecto «tresEnRaya»",
+            "type": "shell",
+            "command": "make",
+            "windows": {
+                "command": "mingw32-make all",
+            },
+            "problemMatcher": ["$gcc"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Ejecutar proyecto tresEnRaya",
+            "type": "shell",
+            "command": "./main",
+            "windows": {
+                "command": "chcp 65001 ; .\\main.exe",
+            },
+            "dependsOn": "Compilar proyecto «tresEnRaya»",
+            "problemMatcher": ["$gcc"],
+        },
+    ],
+    "presentation": {
+        "showReuseMessage": false,
+        "panel": "shared",
+        "reveal": "always",
+        "focus": true,
+    },
+    "version": "2.0.0"
+}
+
