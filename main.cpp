@@ -85,7 +85,6 @@ void jugar(char tablero[][DIM_MAXIMAS], unsigned& n, unsigned& i, unsigned& j, u
         fflush(stdin);
         cin >> opcion;
 
-        cout << opcion;
 
     } while (opcion == 1);
 }
@@ -106,10 +105,9 @@ int main() {
     cout << "Introduzca su nombre de usuario: ";
     cout << "\033[35m";
     getline(cin, username);
+    cout << "\033[0m";
 
-    jugar(tablero, n, i, j, ganadas, perdidas, empate, opcion, username);
-
-    
+        jugar(tablero, n, i, j, ganadas, perdidas, empate, opcion, username);
 
     return 0;
 }

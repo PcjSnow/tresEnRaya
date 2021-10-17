@@ -21,7 +21,7 @@ void inicializarTablero(char tablero[][DIM_MAXIMAS], unsigned n) {
 
 void turnoJugador(char tablero[][DIM_MAXIMAS], unsigned n, unsigned& i, unsigned& j) {
 
-    cout << "\nSu turno! Introduzca la casilla (fila y columna) entre 0 y " << n-1 <<  " incluidos: ";
+    cout << "\n\nSu turno! Introduzca la casilla (fila y columna) entre 0 y " << n-1 <<  " incluidos: ";
     cin >> i >> j;
     
     while (i < 0 || i > n-1 || j < 0 || j > n-1)
@@ -59,7 +59,7 @@ void turnoOrdenador(char tablero[][DIM_MAXIMAS], unsigned n, unsigned& i, unsign
 
     tablero[i][j] = 'O';
 
-    cout << "\nTurno del ordenador! Ha decidido escoger la casilla " << i << ", " << j << endl;
+    cout << "\n\nTurno del ordenador! Ha decidido escoger la casilla " << i << ", " << j << endl;
     
 }
 
