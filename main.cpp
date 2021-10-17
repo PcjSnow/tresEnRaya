@@ -1,37 +1,15 @@
 #include <iostream>
 #include "funciones.hpp"
 
-
-
 using namespace std;
 
-void stats(string username, unsigned wins, unsigned loses, unsigned draws) {
-    cout << "Usuario: " << username << endl;
-    cout << "Total Partidas: " << wins + loses + draws << endl;
-    cout << "Partidas Ganadas: " << wins << endl;
-    cout << "Partidas Perdidas: " << loses << endl;
-    cout << "Partidas Empatadas: " << draws << endl;
-}
+void jugar(char tablero[][DIM_MAXIMAS], unsigned& n, unsigned& i, unsigned& j, unsigned& ganadas,
+    unsigned& perdidas, unsigned& empate, unsigned& opcion, string username) {
 
-
-int main() {
-
-    
-    char tablero[DIM_MAXIMAS][DIM_MAXIMAS];
-    unsigned int i, j, n, ganadas, perdidas, empate, opcion;
-    string username;
-    ganadas = 0;
-    perdidas = 0;
-    empate = 0;
-
-    cout << "Introduzca su nombre de usuario: ";
-    cout << "\033[35m";
-    getline(cin, username);
-
-    do{
+    do
+    {
         /* code */
-     
-    
+
         cout << "De qué tamaño desea el tablero? (3 en raya, 4 en raya...): ";
         cin >> n;
 
@@ -49,12 +27,12 @@ int main() {
         {
             turnoJugador(tablero, n, i, j);
         }
-        else {
+        else
+        {
             turnoOrdenador(tablero, n, i, j);
             mostrarTablero(tablero, n);
             turnoJugador(tablero, n, i, j);
         }
-        
 
         while (!esTresEnRaya(tablero, n, i, j) && !esEmpate(tablero, n, i, j))
         {
@@ -68,12 +46,9 @@ int main() {
             }
 
             turnoJugador(tablero, n, i, j);
-            
         }
 
         mostrarTablero(tablero, n);
-
-        
 
         if (tablero[i][j] == 'X' && esTresEnRaya(tablero, n, i, j))
         {
@@ -95,13 +70,14 @@ int main() {
             cout << "GANA EL ORDENADOR!" << endl;
             perdidas++;
         }
-        else {
+        else
+        {
 
             cout << "\033[35m";
             cout << "____________EMPATE____________" << endl;
             empate++;
         }
-        
+
         stats(username, ganadas, perdidas, empate);
 
         cout << "\033[35m";
@@ -111,8 +87,30 @@ int main() {
         cin >> opcion;
 
         cout << opcion;
+
+    } while (opcion == 1);
+}
+
+
+
+
+int main() {
+
     
-    }while(opcion == 1);
+    char tablero[DIM_MAXIMAS][DIM_MAXIMAS];
+    unsigned int i, j, n, ganadas, perdidas, empate, opcion;
+    string username;
+    ganadas = 0;
+    perdidas = 0;
+    empate = 0;
+
+    cout << "Introduzca su nombre de usuario: ";
+    cout << "\033[35m";
+    getline(cin, username);
+
+    jugar(tablero, n, i, j, ganadas, perdidas, empate, opcion, username);
+
+    
 
     return 0;
 }

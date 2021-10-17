@@ -213,3 +213,12 @@ bool esEmpate(char tablero[][DIM_MAXIMAS], unsigned n, unsigned i, unsigned j) {
     return lleno;
     
 }
+
+void stats(string username, unsigned wins, unsigned loses, unsigned draws)
+{
+    cout << "Usuario: " << username << endl;
+    cout << "Total Partidas: " << wins + loses + draws << endl;
+    cout << "Partidas Ganadas: " << wins << endl;
+    cout << "Partidas Perdidas: " << loses << endl;
+    cout << "Partidas Empatadas: " << draws << endl;
+}

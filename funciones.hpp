@@ -11,7 +11,7 @@ const unsigned DIM_MAXIMAS = 15;
 
 /* Pre: <tablero> es una matriz de tipo char de n x n dimensiones
  * que representa al tablero del n en raya.
- * Post: Ha inicializado todos los componentes de la matriz con un
+ * Post: Ha inicializado los <n> primeros componentes de la matriz con un
  * asterisco '*'.
  */
 void inicializarTablero(char tablero[][DIM_MAXIMAS], unsigned n);
@@ -75,3 +75,9 @@ bool esTresEnRaya(char tablero[][DIM_MAXIMAS], unsigned n, unsigned i, unsigned 
  * está lleno y no se ha logrado ningún n en raya.
  */
 bool esEmpate(char tablero[][DIM_MAXIMAS], unsigned n, unsigned i, unsigned j);
+
+/* Pre: ---
+ * Post: Ha devuelto estadísticas básicas sobre el nombre del jugador, sus victorias,
+ * derrotas y empates.
+ */
+void stats(std::string username, unsigned wins, unsigned loses, unsigned draws);
