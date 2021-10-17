@@ -8,7 +8,6 @@ void jugar(char tablero[][DIM_MAXIMAS], unsigned& n, unsigned& i, unsigned& j, u
 
     do
     {
-        /* code */
 
         cout << "De qué tamaño desea el tablero? (3 en raya, 4 en raya...): ";
         cin >> n;
