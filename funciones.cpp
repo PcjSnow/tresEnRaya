@@ -1,7 +1,7 @@
 #include "funciones.hpp"
-#include <iostream>
 #include <time.h>
 using namespace std;
+#include <iostream>
 
 
 
