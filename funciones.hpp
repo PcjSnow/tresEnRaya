@@ -1,6 +1,6 @@
 /******************************************
  * Fichero interfaz del módulo 'funciones'
- * del programa '3 en raya'
+ * del programa 'n en raya'
  * Autor: PcjSnow
 *******************************************/
 
